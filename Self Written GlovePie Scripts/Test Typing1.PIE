@@ -1,0 +1,175 @@
+﻿
+var.Speed = 90
+key.Enter = wiimote1.SwingDown and wiimote2.SwingDown
+key.BackSpace = wiimote1.SwingLeft and wiimote2.SwingLeft
+key.Space = wiimote1.SwingRightStop and wiimote2.SwingLeftStop
+
+var.YawSpeed = wiimote1.MotionPlus.YawSpeed
+var.PitchSpeed = wiimote1.MotionPlus.PitchSpeed
+if SameValue( Smooth(wiimote1.SmoothRoll, 10), wiimote1.SmoothRoll, 10) then var.Roll1 = Smooth(wiimote1.SmoothRoll, 10) else var.Roll1 = wiimote1.SmoothRoll
+if SameValue( Smooth(wiimote2.SmoothRoll, 10), wiimote2.SmoothRoll, 10) then var.Roll2 = Smooth(wiimote2.SmoothRoll, 10) else var.Roll2 = wiimote2.SmoothRoll
+
+
+PIE.FrameRate = 120hz
+if wiimote1.A and wiimote1.B {
+
+if var.Roll1 > 25 and var.Roll1 < 181 {
+Key.Shift = wiimote1.SwingUp
+Key.Shift = wiimote1.SwingDown
+Key.Shift = wiimote1.SwingLeft
+Key.Shift = wiimote1.SwingRight
+Key.Shift = wiimote1.Stabbing
+}
+
+if var.Roll1 > -181 and var.Roll1 < 25 {
+
+Key.Shift = wiimote1.SwingUp
+Key.Shift = wiimote1.SwingDown
+Key.Shift = wiimote1.SwingLeft
+Key.Shift = wiimote1.SwingRight
+Key.Shift = wiimote1.Stabbing
+}
+       key.A = wiimote1.SwingUp
+       key.S = wiimote1.SwingDown
+       key.D = wiimote1.SwingLeft
+       key.F = wiimote1.SwingRight
+       key.G = wiimote1.Stabbing
+    }
+if wiimote1.A and not wiimote1.B{
+
+if var.Roll1 > 25 and var.Roll1 < 181 {
+
+Key.Shift = wiimote1.SwingUp
+Key.Shift = wiimote1.SwingDown
+Key.Shift = wiimote1.SwingLeft
+Key.Shift = wiimote1.SwingRight
+Key.Shift = wiimote1.Stabbing
+}
+
+if var.Roll1 > -181 and var.Roll1 < -25 {
+
+Key.Shift = wiimote1.SwingUp
+Key.Shift = wiimote1.SwingDown
+Key.Shift = wiimote1.SwingLeft
+Key.Shift = wiimote1.SwingRight
+Key.Shift = wiimote1.Stabbing
+}
+
+     key.Q = wiimote1.SwingUp
+     key.W = wiimote1.SwingDown
+     key.E = wiimote1.SwingLeft
+     key.r = wiimote1.SwingRight
+     key.T = wiimote1.Stabbing
+}
+
+if wiimote1.B and not wiimote1.A {
+
+if var.Roll1 > 25 and var.Roll1 < 181 {
+
+Key.Shift = wiimote1.SwingUp
+Key.Shift = wiimote1.SwingDown
+Key.Shift = wiimote1.SwingLeft
+Key.Shift = wiimote1.SwingRight
+Key.Shift = wiimote1.Stabbing
+}
+
+if var.Roll1 > -181 and var.Roll1 < -25 {
+
+Key.Shift = wiimote1.SwingUp
+Key.Shift = wiimote1.SwingDown
+Key.Shift = wiimote1.SwingLeft
+Key.Shift = wiimote1.SwingRight
+Key.Shift = wiimote1.Stabbing
+}
+
+     key.Z = wiimote1.SwingUp
+     key.X = wiimote1.SwingDown
+     key.C = wiimote1.SwingLeft
+     key.V = wiimote1.SwingRight
+     key.B = wiimote1.Stabbing
+}
+
+
+if wiimote2.A and wiimote2.B {
+
+if var.Roll2 > 25 and var.Roll2 < 181 {
+Key.Shift = wiimote2.SwingUp
+Key.Shift = wiimote2.SwingDown
+Key.Shift = wiimote2.SwingLeft
+Key.Shift = wiimote2.SwingRight
+Key.Shift = wiimote2.Stabbing
+}
+
+if var.Roll2 > -181 and var.Roll2 < -25 {
+Key.Shift = wiimote2.SwingUp
+Key.Shift = wiimote2.SwingDown
+Key.Shift = wiimote2.SwingLeft
+Key.Shift = wiimote2.SwingRight
+Key.Shift = wiimote2.Stabbing
+}
+
+       key.J = wiimote2.SwingUp
+       key.K = wiimote2.SwingDown
+       key.L = wiimote2.SwingLeft
+       key.Semicolon = wiimote2.SwingRight
+       key.H = wiimote2.Stabbing
+
+    }
+if wiimote2.A and not wiimote2.B{
+
+if var.Roll2 > 25 and var.Roll2 < 181 {
+Key.Shift = wiimote2.SwingUp
+Key.Shift = wiimote2.SwingDown
+Key.Shift = wiimote2.SwingLeft
+Key.Shift = wiimote2.SwingRight
+Key.Shift = wiimote2.Stabbing
+}
+
+if var.Roll2 > -181 and var.Roll2 < -25 {
+Key.Shift = wiimote2.SwingUp
+Key.Shift = wiimote2.SwingDown
+Key.Shift = wiimote2.SwingLeft
+Key.Shift = wiimote2.SwingRight
+Key.Shift = wiimote2.Stabbing
+}
+
+     key.U = wiimote2.SwingUp
+     key.I = wiimote2.SwingDown
+     key.O = wiimote2.SwingLeft
+     key.P = wiimote2.SwingRight
+     key.Y = wiimote2.Stabbing
+    }
+
+}
+if wiimote2.B and not wiimote2.A {
+
+if var.Roll2 > -181 and var.Roll2 < -25 {
+Key.Shift = wiimote2.SwingUp
+Key.Shift = wiimote2.SwingDown
+Key.Shift = wiimote2.SwingLeft
+Key.Shift = wiimote2.SwingRight
+Key.Shift = wiimote2.Stabbing
+}
+
+     key.M = wiimote2.SwingUp
+     key.Comma = wiimote2.SwingDown
+     key.Dot = wiimote2.SwingLeft
+     key.ForwardSlash = wiimote2.SwingRight
+     key.N = wiimote2.Stabbing
+}
+
+
+
+/* // for mouse.x and mouse.y instead
+   mouse.x = var.MouseX
+   mouse.y = var.MouseY
+   var.MouseX = var.MouseX + ( var.SpeedX / (20500 - EnsureMapRange(var.Speed, 0, 100, 0, 20000) ) )
+   var.MouseY = var.MouseY - ( var.SpeedY / (20500 - EnsureMapRange(var.Speed, 0, 100, 0, 20000) ) )
+*/
+}
+/* // for mouse.x and mouse.y instead
+   var.MouseX = mouse.x
+   var.MouseY = mouse.y
+*/
+}
+
