@@ -1,0 +1,93 @@
+﻿/*
+    WiiMotion Plus Mouse                                  v 2010.01.14
+    by lednerg
+
+    Emulates the basic functionality of a Gyration Air Mouse.
+    Requires GlovePIE version .42 or higher.
+
+    Leave the Wiimote on your desk when starting so it can calibrate.
+    Hold B to move, A = Left-Click, + = Right-Click, Down = Middle-Click.
+*/
+
+key.Enter = wiimote1.SwingRight and wiimote2.SwingDown
+key.BackSpace = wiimote1.SwingLeft and wiimote2.SwingLeft
+//var.MoveButton = wiimote.B
+var.Speed = 75   // 0 to 100
+
+PIE.FrameRate = 120hz
+if wiimote2.HasMotionPlus = false or wiimote1.HasMotionPlus = false then debug = "WiiMotion Plus NOT DETECTED!"
+if wiimote2.HasMotionPlus = true or wiimote1.HasMotionPlus = true{
+   var.YawSpeed2 = wiimote1.MotionPlus.YawSpeed
+   var.PitchSpeed2 = wiimote1.MotionPlus.PitchSpeed
+   if SameValue( Smooth(wiimote1.SmoothRoll, 10), wiimote1.SmoothRoll, 10) then var.Roll = Smooth(wiimote1.SmoothRoll, 10) else var.Roll = wiimote1.SmoothRoll
+   if var.Roll < 0 and var.Roll >= -90 {
+      var.RightDown = -1
+      var.TopUp = 1
+      Key.a = wiimote1.A
+      key.s = wiimote1.B
+      key.d = wiimote1.Down
+      key.f = wiimote1.Plus
+      key.g = wiimote1.Minus
+      Key.h = wiimote2.A
+      key.j = wiimote2.B
+      key.k = wiimote2.Down
+      key.l = wiimote2.Minus
+      key.Semicolon = wiimote2.Plus
+
+   }
+   if var.Roll <= 90 and var.Roll >= 0 {
+      var.RightDown = 1
+      var.TopUp = 1
+      Key.z = wiimote1.A
+      key.x = wiimote1.B
+      key.c = wiimote1.Down
+      key.v = wiimote1.Plus
+      key.b = wiimote1.Minus
+      Key.n = wiimote2.A
+      key.m = wiimote2.B
+      key.comma = wiimote2.Down
+      key.period = wiimote2.Minus
+      key.ForwardSlash = wiimote2.Plus
+   }
+   if var.Roll > 90 and var.Roll <= 180 {
+      var.RightDown = 1
+      var.TopUp = -1
+      Key.a = wiimote1.A
+      key.s = wiimote1.B
+      key.d = wiimote1.Down
+      key.f = wiimote1.Plus
+      key.g = wiimote1.Minus
+      Key.h = wiimote2.A
+      key.j = wiimote2.B
+      key.k = wiimote2.Down
+      key.l = wiimote2.Minus
+      key.Semicolon = wiimote2.Plus
+   }
+   if var.Roll < -90 and var.Roll >= -180 {
+      var.RightDown = -1
+      var.TopUp = -1
+      Key.a = wiimote1.A
+      key.s = wiimote1.B
+      key.d = wiimote1.Down
+      key.f = wiimote1.Plus
+      key.g = wiimote1.Minus
+      Key.h = wiimote2.A
+      key.j = wiimote2.B
+      key.k = wiimote2.Down
+      key.l = wiimote2.Minus
+      key.Semicolon = wiimote2.Plus
+   }
+
+/* // for mouse.x and mouse.y instead
+   mouse.x = var.MouseX
+   mouse.y = var.MouseY
+   var.MouseX = var.MouseX + ( var.SpeedX / (20500 - EnsureMapRange(var.Speed, 0, 100, 0, 20000) ) )
+   var.MouseY = var.MouseY - ( var.SpeedY / (20500 - EnsureMapRange(var.Speed, 0, 100, 0, 20000) ) )
+*/
+}
+/* // for mouse.x and mouse.y instead
+   var.MouseX = mouse.x
+   var.MouseY = mouse.y
+*/
+}
+
