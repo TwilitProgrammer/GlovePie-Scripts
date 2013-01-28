@@ -1,0 +1,20 @@
+﻿if(Wiimote.One){
+   Key.W = Wiimote.Right
+   Key.A = Wiimote.Up
+   Key.S = Wiimote.Left
+   Key.D = Wiimote.Down
+   Key.F = Wiimote.Two
+}
+if(!Wiimote.One){
+   Key.Up = Wiimote.Right
+   Key.Left = Wiimote.Up
+   Key.Down = Wiimote.Left
+   Key.Right = Wiimote.Down
+   Key.Space = Wiimote.Two
+}
+//Key.F = Wiimote.One
+Key.Enter = Wiimote.Home
+
+
+
+

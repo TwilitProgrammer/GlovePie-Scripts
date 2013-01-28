@@ -1,0 +1,32 @@
+﻿/*
+*      Code Written by Kyle Amos
+*      TwilitProgrammer
+*    This is a code written to allow for play using the dolphin emulator
+*    of Super Mario Sunshine
+*/
+
+Key.A = wiimote.B
+mouse.LeftButton = wiimote.A
+
+var.Speed = 75   // 0 to 100
+
+PIE.FrameRate = 120hz
+
+Key.Up = Nunchuk.JoyY < -0.4
+Key.Left = Nunchuk.JoyX < -0.4
+Key.Down = Nunchuk.JoyY > 0.4
+Key.Right = Nunchuk.JoyX > 0.4
+Key.Tab = Nunchuk.ZButton
+Key.E = Nunchuk.CButton
+Key.X = Wiimote.Minus
+Key.Y = Nunchuk.Stabbing
+Key.Enter = Wiimote.Plus
+Key.P = Wiimote.Two
+
+Key.One = Wiimote.Down
+Key.Two = Wiimote.Right
+Key.Three = Wiimote.Up
+Key.Four = Wiimote.Left
+
+
+
