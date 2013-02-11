@@ -1,0 +1,54 @@
+﻿
+var.Speed = 80   // 0 to 100
+
+PIE.FrameRate = 120hz
+
+
+if Wiimote.HasNunchuk = false then debug = "Nunchuk NOT DETECTED!"
+if wiimote.HasNunchuk = true {
+
+if !nunchuk.c{
+   Key.Up = Nunchuk.JoyY < -0.4
+   Key.Left = Nunchuk.JoyX < -0.4
+   Key.Down = Nunchuk.JoyY > 0.4
+   Key.Right = Nunchuk.JoyX > 0.4
+}
+if nunchuk.C{
+   Key.Eight =  Nunchuk.JoyY < -0.4
+   Key.Four = Nunchuk.JoyX < -0.4
+   Key.Two = Nunchuk.JoyY > 0.4
+   Key.Six = Nunchuk.JoyX > 0.4
+}
+   Key.Z = Nunchuk.Z
+
+
+}
+Key.W = Wiimote.Up
+Key.A = Wiimote.Left
+Key.S = Wiimote.Down
+Key.D = Wiimote.Right
+
+Key.R = Wiimote.A
+Key.B = Wiimote.B
+Key.H = Wiimote.Home
+Key.NumpadMinus = Wiimote.Minus
+Key.NumpadPlus = Wiimote.Plus
+Key.O = Wiimote.One
+Key.T = Wiimote.Two
+
+/*
+
+Key.Nine = wiimote.B
+Key.Seven = wiimote.A
+Key.Three = wiimote.Plus
+Key.J = wiimote.Down
+Key.U = wiimote.Up
+Key.H = wiimote.Left
+Key.K = wiimote.Right
+    */
+//Key.Zero = Wiimote.Home
+//Key.W = Wiimote.Shake
+//Key.One = Wiimote.Minus
+//Key.T = Wiimote.One
+//Key.W = Wiimote.Two
+
