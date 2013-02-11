@@ -1,0 +1,163 @@
+﻿PIE.FrameRate = 120hz
+//if Wiimote1.HasMotionPlus = false and Wiimote2.HasMotionPlus = false then debug "MotionPlus on Wiimote1 and Wiimote2 Not Found!"
+
+
+if Wiimote1.HasMotionPlus and Wiimote2.HasMotionPlus {
+ Wiimote1.Led1 = true
+ Wiimote1.Led2 = false
+ Wiimote1.Led3 = false
+ Wiimote1.Led4 = false
+ Wiimote2.Led1 = false
+ Wiimote2.Led2 = true
+ Wiimote2.Led3 = false
+ Wiimote2.Led4 = false
+ CapsLock = Wiimote1.Home
+ CapsLock = Wiimote2.Home
+ Shift = Wiimote1.DPad
+
+if Wiimote1.A and Wiimote2.A and not Wiimote1.B and not Wiimote2.B{
+   if Wiimote1.Down or Wiimote2.Down{
+ Shift + Q = Wiimote2.SwingLeft
+ Shift + W = Wiimote2.SwingUp
+ Shift + E = Wiimote2.SwingDown
+ Shift + R = Wiimote2.SwingRight
+ Shift + U = Wiimote1.SwingLeft
+ Shift + I = Wiimote1.SwingUp
+ Shift + O = Wiimote1.SwingDown 
+ Shift + P = Wiimote1.SwingRight
+  }
+ Q = Wiimote2.SwingLeft
+ W = Wiimote2.SwingUp
+ E = Wiimote2.SwingDown
+ R = Wiimote2.SwingRight
+ U = Wiimote1.SwingLeft
+ I = Wiimote1.SwingUp
+ O = Wiimote1.SwingDown 
+ P = Wiimote1.SwingRight
+ 
+}
+if Wiimote1.B and Wiimote2.B and not Wiimote1.A and not Wiimote2.A{
+   if Wiimote1.Down or Wiimote2.Down{
+ Shift + Z = Wiimote2.SwingLeft
+ Shift + X = Wiimote2.SwingUp
+ Shift + C = Wiimote2.SwingDown
+ Shift + V = Wiimote2.SwingRight
+ Shift + M = Wiimote1.SwingLeft
+ Shift + Comma = Wiimote1.SwingUp
+ Shift + Period = Wiimote1.SwingDown 
+ Shift + ForwardSlash = Wiimote1.SwingRight
+ }
+ Z = Wiimote2.SwingLeft
+ X = Wiimote2.SwingUp
+ C = Wiimote2.SwingDown
+ V = Wiimote2.SwingRight
+ M = Wiimote1.SwingLeft
+ Comma = Wiimote1.SwingUp
+ Period = Wiimote1.SwingDown
+ ForwardSlash = Wiimote1.SwingRight
+}
+if Wiimote1.A and Wiimote1.B and Wiimote2.A and Wiimote2.B{
+   if Wiimote1.Down or Wiimote2.Down{
+ Shift + A = Wiimote2.SwingLeft
+ Shift + S = Wiimote2.SwingUp
+ Shift + D = Wiimote2.SwingDown
+ Shift + F = Wiimote2.SwingRight
+ Shift + J = Wiimote1.SwingLeft
+ Shift + K = Wiimote1.SwingUp
+ Shift + L = Wiimote1.SwingDown 
+ Shift + Semicolon = Wiimote1.SwingRight
+ }
+  A = Wiimote2.SwingLeft
+ S = Wiimote2.SwingUp
+ D = Wiimote2.SwingDown
+ F = Wiimote2.SwingRight
+ J = Wiimote1.SwingLeft
+ K = Wiimote1.SwingUp
+ L = Wiimote1.SwingDown 
+ Semicolon = Wiimote1.SwingRight
+}
+if Wiimote1.A and not Wiimote1.B and Wiimote2.B and not Wiimote2.A{
+   if Wiimote1.Down or Wiimote2.Down{
+ Shift + Backspace = Wiimote2.SwingLeft
+ Shift + T = Wiimote2.SwingUp
+ Shift + B = Wiimote2.SwingDown
+ Shift + G = Wiimote2.SwingRight
+ Shift + H = Wiimote1.SwingLeft
+ Shift + Y = Wiimote1.SwingUp
+ Shift + N = Wiimote1.SwingDown 
+ }
+  Backspace = Wiimote2.SwingLeft
+ T = Wiimote2.SwingUp
+ B = Wiimote2.SwingDown
+ G = Wiimote2.SwingRight
+ H = Wiimote1.SwingLeft
+ Y = Wiimote1.SwingUp
+ N = Wiimote1.SwingDown
+}
+if Wiimote1.B and not Wiimote1.A and Wiimote2.A and not Wiimote2.B{
+   if Wiimote1.Down or Wiimote2.Down{
+ Shift + Key.Open = Wiimote2.SwingLeft
+ Shift + Equals = Wiimote2.SwingUp
+ Shift + SingleQuote = Wiimote2.SwingDown
+ Shift + Key.Close = Wiimote2.SwingRight
+ Shift + Space = Wiimote1.SwingLeft
+ Shift + Minus = Wiimote1.SwingUp
+ Shift + Enter = Wiimote1.SwingDown 
+ }
+ Key.Open = Wiimote2.SwingLeft
+ Equals = Wiimote2.SwingUp
+ SingleQuote = Wiimote2.SwingDown
+ Key.Close = Wiimote2.SwingRight
+ Space = Wiimote1.SwingLeft
+ Minus = Wiimote1.SwingUp
+ Enter = Wiimote1.SwingDown 
+}
+if Wiimote1.A and Wiimote1.B and not Wiimote2.A and not Wiimote2.B{
+   if Wiimote1.Down or Wiimote2.Down{
+ Shift + One = Wiimote2.SwingLeft
+ Shift + Two = Wiimote2.SwingUp
+ Shift + Three = Wiimote2.SwingDown
+ Shift + Four = Wiimote2.SwingRight
+ Shift + Five = Wiimote2.Stabbing
+ Shift + Six = Wiimote1.Stabbing
+ Shift + Seven = Wiimote1.SwingLeft
+ Shift + Eight = Wiimote1.SwingUp
+ Shift + Nine = Wiimote1.SwingDown
+ Shift + Zero = Wiimote1.SwingRight
+ }
+  One = Wiimote2.SwingLeft
+ Two = Wiimote2.SwingUp
+ Three = Wiimote2.SwingDown
+ Four = Wiimote2.SwingRight
+ Five = Wiimote2.Stabbing
+ Six = Wiimote1.Stabbing
+ Seven = Wiimote1.SwingLeft
+ Eight = Wiimote1.SwingUp
+ Nine = Wiimote1.SwingDown
+ Zero = Wiimote1.SwingRight
+}
+if Wiimote2.A and Wiimote2.B and not Wiimote1.A and not Wiimote1.B{
+   if Wiimote1.Down or Wiimote2.Down{
+ Shift + One = Wiimote2.SwingLeft
+ Shift + Two = Wiimote2.SwingUp
+ Shift + Three = Wiimote2.SwingDown
+ Shift + Four = Wiimote2.SwingRight
+ Shift + Five = Wiimote2.Stabbing
+ Shift + Six = Wiimote1.Stabbing
+ Shift + Seven = Wiimote1.SwingLeft
+ Shift + Eight = Wiimote1.SwingUp
+ Shift + Nine = Wiimote1.SwingDown
+ Shift + Zero = Wiimote1.SwingRight
+ }
+  One = Wiimote2.SwingLeft
+ Two = Wiimote2.SwingUp
+ Three = Wiimote2.SwingDown
+ Four = Wiimote2.SwingRight
+ Five = Wiimote2.Stabbing
+ Six = Wiimote1.Stabbing
+ Seven = Wiimote1.SwingLeft
+ Eight = Wiimote1.SwingUp
+ Nine = Wiimote1.SwingDown
+ Zero = Wiimote1.SwingRight
+}
+}
