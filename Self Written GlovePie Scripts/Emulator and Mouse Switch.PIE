@@ -2,12 +2,12 @@
 var.Speed = 80   // 0 to 100
 
 
-
 if nunchuk.C {
    if nunchuk.Z{
       PIE.FrameRate = 1hz
 
       if nunchuk.Left {
+
          if wiimote.led1 = true {
             wiimote.led1 = false
             wiimote.led2 = false
@@ -29,9 +29,13 @@ if nunchuk.C {
             wiimote.led3 = false
             wiimote.led4 = false
          }
+         wiimote.Rumble = true
+         wait 1 ms
+         wiimote.Rumble = false
 
       }
       if nunchuk.Right {
+
          if wiimote.led1 = true {
             wiimote.led1 = false
             wiimote.led2 = true
@@ -53,6 +57,10 @@ if nunchuk.C {
             wiimote.led3 = false
             wiimote.led4 = false
          }
+         wiimote.Rumble = true
+         wait 1 ms
+         wiimote.Rumble = false
+
       }
    }
 }
@@ -155,16 +163,49 @@ if var.MoveButton = false {
 }
 
 
-Key.Up = Nunchuk.JoyY < -0.4
-Key.Left = Nunchuk.JoyX < -0.4
-Key.Down = Nunchuk.JoyY > 0.4
-Key.Right = Nunchuk.JoyX > 0.4
-//Key.P = Wiimote.Shake
-Key.Escape = Wiimote.Home
-Key.R = Wiimote.Minus
 if nunchuk.c {
    PIE.FrameRate = 1hz
-}
+   if wiimote.up or nunchuk.up {
+      var.Shifted +=1
+      wiimote.Rumble = true
+      wait 1 ms
+      wiimote.Rumble = false
+   }
+   if wiimote.down or nunchuk.down {
+      var.Shifted -= 1
+      wiimote.Rumble = true
+      wait 1 ms
+      wiimote.Rumble = false
+   }
 
+}
+if !nunchuk.c {
+   if |var.Shifted| % 2 = 0 {
+      Key.RightControl = nunchuk.z
+
+      if nunchuk.z {
+         Key.Z = nunchuk.Left
+         key.y = nunchuk.Right
+         key.x = nunchuk.Up
+         key.v = nunchuk.Down
+         var.Pressed = 1
+       }
+       elseif !nunchuk.z {
+          Key.Up = Nunchuk.JoyY < -0.4
+          Key.Left = Nunchuk.JoyX < -0.4
+          Key.Down = Nunchuk.JoyY > 0.4
+          Key.Right = Nunchuk.JoyX > 0.4
+          var.Pressed = 0
+       }
+   }
+   if |var.Shifted| % 2 = 1 {
+        Key.Shift = nunchuk.z
+       if nunchuk.z {
+           var.Pressed = 1
+       }
+       elseif !nunchuk.z then var.Pressed = 0
+   }
+   var.Remain = |var.Shifted| % 2
+}
 }
 
